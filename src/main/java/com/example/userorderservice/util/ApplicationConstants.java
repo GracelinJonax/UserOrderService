@@ -1,16 +1,21 @@
 package com.example.userorderservice.util;
 
 public class ApplicationConstants {
-    public final static String userSaveApi="user";
-    public final static String productSaveApi="product";
-    public final static String orderSaveApi="order";
-    public final static String tenantSaveApi="tenant";
-    public final static String loginTenantApi="loginTenant";
-    public final static String loginUserApi="loginUser";
-    public final static String feignName="proxy";
-    public final static String feignUrl="localhost:8082";
-    public final static String feignEndPoint="toBill";
-    public final static String userForeignKey="userId";
-    public final static String orderForeignKey="orderId";
-    public final static String productForeignKey="productId";
+    private ApplicationConstants() {
+    }
+
+    public static final String USER_SAVE_API = "user";
+    public static final String PRODUCT_SAVE_API = "product";
+    public static final String ORDER_SAVE_API = "order";
+
+    public static final String TENANT_SAVE_API = "tenant";
+
+    public static final String LOGIN_TENANT_API = "loginTenant";
+    public static final String LOGIN_USER_API = "loginUser";
+    public static final String FEIGN_NAME = "proxy";
+    public static final String FEIGN_URL = "localhost:8082";
+    public static final String FEIGN_ENDPOINT = "toBill";
+    public static final String USER_FOREIGN_KEY = "userId";
+    public static final String ORDER_FOREIGN_KEY = "orderId";
+    public static final String PRODUCT_FOREIGN_KEY = "productId";
 }

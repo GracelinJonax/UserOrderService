@@ -1,7 +1,7 @@
 package com.example.userorderservice.service;
 
-import com.example.userorderservice.Dto.LoginDto;
-import com.example.userorderservice.Dto.OrderDto;
+import com.example.userorderservice.dto.LoginDto;
+import com.example.userorderservice.dto.OrderDto;
 import com.example.userorderservice.model.ProductDetails;
 import com.example.userorderservice.model.TenantDetails;
 import com.example.userorderservice.model.UserDetails;
@@ -23,5 +23,4 @@ public interface UserOrderService {
 
     String saveTenantService(TenantDetails tenantDetails);
 
-    //    void sendEmailService(orderBillDto orderBillDto);
 }

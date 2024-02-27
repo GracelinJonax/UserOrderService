@@ -9,15 +9,13 @@ import org.hibernate.annotations.UuidGenerator;
 @Data
 public class OrderedProductDetails {
     @Id
-//    @GeneratedValue(generator = "system-uuid")
-//    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @UuidGenerator
     private String orderedProductId;
     @ManyToOne
-    @JoinColumn(name = ApplicationConstants.orderForeignKey)
+    @JoinColumn(name = ApplicationConstants.ORDER_FOREIGN_KEY)
     OrderDetails orderDetails;
     @OneToOne
-    @JoinColumn(name = ApplicationConstants.productForeignKey)
+    @JoinColumn(name = ApplicationConstants.PRODUCT_FOREIGN_KEY)
     ProductDetails productDetails;
 
     private int quantity;

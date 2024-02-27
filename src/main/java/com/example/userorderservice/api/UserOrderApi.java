@@ -1,7 +1,7 @@
 package com.example.userorderservice.api;
 
-import com.example.userorderservice.Dto.LoginDto;
-import com.example.userorderservice.Dto.OrderDto;
+import com.example.userorderservice.dto.LoginDto;
+import com.example.userorderservice.dto.OrderDto;
 import com.example.userorderservice.model.ProductDetails;
 import com.example.userorderservice.model.TenantDetails;
 import com.example.userorderservice.model.UserDetails;
@@ -14,22 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public interface UserOrderApi {
-    @PostMapping(value = ApplicationConstants.productSaveApi)
+    @PostMapping(value = ApplicationConstants.PRODUCT_SAVE_API)
     ResponseEntity<String> saveProduct(@RequestBody ProductDetails productDetails);
 
-    @PostMapping(value = ApplicationConstants.orderSaveApi)
+    @PostMapping(value = ApplicationConstants.ORDER_SAVE_API)
     ResponseEntity<String> orderProduct(@RequestBody OrderDto orderDto);
 
-    @GetMapping(value = ApplicationConstants.loginTenantApi)
+    @GetMapping(value = ApplicationConstants.LOGIN_TENANT_API)
     ResponseEntity<String> loginTenant(@RequestBody LoginDto loginDto);
 
-    @GetMapping(value = ApplicationConstants.loginUserApi)
+    @GetMapping(value = ApplicationConstants.LOGIN_USER_API)
     ResponseEntity<String> loginUser(@RequestBody LoginDto loginDto);
-    @PostMapping(value = ApplicationConstants.userSaveApi)
-    ResponseEntity<String> saveUser(@RequestBody UserDetails userDetails);
-    @PostMapping(value = ApplicationConstants.tenantSaveApi)
-    ResponseEntity<String> saveTenant(@RequestBody TenantDetails tenantDetails);
-    //    @PostMapping("/email")
-    //    void sendEmail(@RequestBody orderBillDto orderBillDto);
 
+    @PostMapping(value = ApplicationConstants.USER_SAVE_API)
+    ResponseEntity<String> saveUser(@RequestBody UserDetails userDetails);
+
+    @PostMapping(value = ApplicationConstants.TENANT_SAVE_API)
+    ResponseEntity<String> saveTenant(@RequestBody TenantDetails tenantDetails);
 }

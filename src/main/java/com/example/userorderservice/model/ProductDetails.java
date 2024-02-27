@@ -9,8 +9,6 @@ import org.hibernate.annotations.UuidGenerator;
 @Data
 public class ProductDetails {
     @Id
-//    @GeneratedValue(generator = "system-uuid")
-//    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @UuidGenerator
     private String productId;
     private String name;

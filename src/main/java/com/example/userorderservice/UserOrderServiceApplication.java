@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-@ImportAutoConfiguration({ FeignAutoConfiguration.class })
+@ImportAutoConfiguration({FeignAutoConfiguration.class})
 public class UserOrderServiceApplication {
 
     public static void main(String[] args) {

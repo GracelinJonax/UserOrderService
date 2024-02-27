@@ -1,7 +1,7 @@
 package com.example.userorderservice.controller;
 
-import com.example.userorderservice.Dto.LoginDto;
-import com.example.userorderservice.Dto.OrderDto;
+import com.example.userorderservice.dto.LoginDto;
+import com.example.userorderservice.dto.OrderDto;
 import com.example.userorderservice.api.UserOrderApi;
 import com.example.userorderservice.model.ProductDetails;
 import com.example.userorderservice.model.TenantDetails;
@@ -32,12 +32,12 @@ public class UserOrderController implements UserOrderApi {
 
     @Override
     public ResponseEntity<String> loginTenant(LoginDto loginDto) {
-        return new ResponseEntity<>(userOrderService.loginTenantService(loginDto),HttpStatus.OK);
+        return new ResponseEntity<>(userOrderService.loginTenantService(loginDto), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<String> loginUser(LoginDto loginDto) {
-        return new ResponseEntity<>(userOrderService.loginUserService(loginDto),HttpStatus.OK);
+        return new ResponseEntity<>(userOrderService.loginUserService(loginDto), HttpStatus.OK);
     }
 
     @Override
@@ -47,11 +47,7 @@ public class UserOrderController implements UserOrderApi {
 
     @Override
     public ResponseEntity<String> saveTenant(TenantDetails tenantDetails) {
-        return new ResponseEntity<>(userOrderService.saveTenantService(tenantDetails),HttpStatus.OK);
+        return new ResponseEntity<>(userOrderService.saveTenantService(tenantDetails), HttpStatus.OK);
     }
-    //    @Override
-    //    public void sendEmail(orderBillDto orderBillDto) {
-    //        userOrderService.sendEmailService(orderBillDto);
-    //    }
 }
 
