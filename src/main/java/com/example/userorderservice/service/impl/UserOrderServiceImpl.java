@@ -110,6 +110,7 @@ public class UserOrderServiceImpl implements UserOrderService {
         orderDetails.setTotalPrice(totalPrice);
         bill.setTotalPrice(totalPrice);
         bill.setProducts(billProductList);
+
         proxyFeign.saveBill(bill);
 
         orderDetailsRepository.save(orderDetails);

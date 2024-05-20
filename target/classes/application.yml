@@ -20,6 +20,23 @@ spring:
           starttls:
             enable: true
             required: true
+tenants:
+  datasource:
+    tenantDb:
+      url: jdbc:postgresql://localhost:5432/tenantDb
+      username: postgres
+      password: Grace@2002
+      driverClassName: org.postgresql.Driver
+    tenant_1:
+      url: jdbc:postgresql://localhost:5432/tenant_1
+      username: postgres
+      password: Grace@2002
+      driverClassName: org.postgresql.Driver
+    tenant_2:
+      url: jdbc:postgresql://localhost:5432/tenant_2
+      username: postgres
+      password: Grace@2002
+      driverClassName: org.postgresql.Driver
 #logging:
 #  level:
 #    com:

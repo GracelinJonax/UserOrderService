@@ -4,8 +4,6 @@ p
 ~
 Nsrc/main/java/com/example/userorderservice/controller/UserOrderController.java,e/7/e75cbbefd7f469214f1f7ff3ed17d2c3bd41fc0f
 l
-<src/main/java/com/example/userorderservice/Dto/LoginDto.java,4/e/4ee03be1216c1aff76d8957442f7f81b492d80a3
-l
 <src/main/java/com/example/userorderservice/dto/LoginDto.java,0/a/0a2b10344b37bf33061ed39086bbe968e850d1ee
 p
 @src/main/java/com/example/userorderservice/dto/OrderBillDto.java,c/a/ca9dba3a3e1373206e4116cbbbc864ea69fb272e
@@ -15,18 +13,12 @@ p
 @src/main/java/com/example/userorderservice/feign/ProxyFeign.java,f/8/f8d29a9cb5292f6546842b06c9f0ebd97db87a5d
 w
 Gsrc/main/java/com/example/userorderservice/feign/ProxyFeignService.java,c/2/c25118629cce1c5e1f6accaf7216bcfd8289b442
-z
-Jsrc/main/java/com/example/userorderservice/Interceptor/InternalFilter.java,0/2/027799e742f2bdc3cacaca3fd197c33aa62c8186
-|
-Lsrc/main/java/com/example/userorderservice/Interceptor/TenantDataSource.java,b/8/b8c0f6f8f5dc44052126f5effe5eca7ef24b11b0
 
 Qsrc/main/java/com/example/userorderservice/service/impl/UserOrderServiceImpl.java,9/9/9918aea2a3de0f24906ca1bd5160dd341bc13415
 z
 Jsrc/main/java/com/example/userorderservice/interceptor/InternalFilter.java,1/7/177838e4f5662eb477c1a6fe68af20f6d4fb8192
 |
 Lsrc/main/java/com/example/userorderservice/interceptor/TenantDataSource.java,8/b/8b3c59de6c26c0306071f462e5ccd56c16c23309
-v
-Fsrc/main/java/com/example/userorderservice/exception/BadException.java,6/c/6c4b18ae4c765a8eaa3ba105bdde1cf0b9868bc0
 }
 Msrc/main/java/com/example/userorderservice/exception/BadRequestException.java,4/b/4b0923045b25eab847cf1ff7b16cb24c0d6a393b
 
@@ -83,3 +75,5 @@ D
 UserOrderService.iml,2/0/2063ccf01ddb4b5d2d16386aa6f218fe19d63938
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+R
+"src/main/resources/application.yml,a/6/a6d8b8556fee0e03112ce2bf34b8cb27a7dc9e58

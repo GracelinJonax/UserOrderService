@@ -1,51 +1,41 @@
 package com.example.userorderservice.interceptor;
 
-import com.example.userorderservice.exception.BadRequestException;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import javax.sql.DataSource;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 @Configuration
+@Getter
+@ConfigurationProperties(prefix = "tenants")
 public class TenantConfiguration {
     @Value("${defaultTenant}")
     private String defaultTenant;
 
-    @Bean
-//    @ConfigurationProperties(prefix = "tenants")
-    public DataSource dataSource() {
-        File[] files = Paths.get("src/main/resources/tenant").toFile().listFiles();
-        Map<Object, Object> dataSource = new HashMap<>();
-        assert files != null;
-        for (File file : files) {
-            Properties properties = new Properties();
-            DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-            try {
-                properties.load(new FileInputStream(file));
-                String tenantId = properties.getProperty("name");
-                dataSourceBuilder.url(properties.getProperty("datasource.url"));
-                dataSourceBuilder.username(properties.getProperty("datasource.username"));
-                dataSourceBuilder.password(properties.getProperty("datasource.password"));
-                dataSourceBuilder.driverClassName(properties.getProperty("datasource.driverClassName"));
-                dataSource.put(tenantId, dataSourceBuilder.build());
-            } catch (IOException e) {
-                throw new BadRequestException(e.getMessage());
-            }
-        }
+    Map<Object, Object> datasource = new HashMap<>();
 
+    public void setDatasource(Map<String, Map<String, String>> datasource) {
+        datasource.forEach((key, value) ->
+                this.datasource.put(key, DataSourceBuilder.create()
+                        .url(value.get("url"))
+                        .username(value.get("username"))
+                        .password(value.get("password"))
+                        .driverClassName(value.get("driverClassName"))
+                        .build()));
+    }
+
+    @Bean
+    public DataSource dataSource() {
         AbstractRoutingDataSource routingDataSource = new TenantDataSource();
-        routingDataSource.setDefaultTargetDataSource(dataSource.get(defaultTenant));
-        routingDataSource.setTargetDataSources(dataSource);
+        routingDataSource.setDefaultTargetDataSource(datasource.get(defaultTenant));
+        routingDataSource.setTargetDataSources(datasource);
         routingDataSource.afterPropertiesSet();
         return routingDataSource;
     }

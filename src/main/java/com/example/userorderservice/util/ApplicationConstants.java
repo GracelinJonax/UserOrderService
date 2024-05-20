@@ -1,15 +1,10 @@
 package com.example.userorderservice.util;
 
 public class ApplicationConstants {
-    private ApplicationConstants() {
-    }
-
     public static final String USER_SAVE_API = "user";
     public static final String PRODUCT_SAVE_API = "product";
     public static final String ORDER_SAVE_API = "order";
-
     public static final String TENANT_SAVE_API = "tenant";
-
     public static final String LOGIN_TENANT_API = "loginTenant";
     public static final String LOGIN_USER_API = "loginUser";
     public static final String FEIGN_NAME = "proxy";
